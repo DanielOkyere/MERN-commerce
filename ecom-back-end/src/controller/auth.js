@@ -65,10 +65,3 @@ exports.signin = (req, res) => {
 
 }
 
-exports.requireSignin = (req, res, next) => {
-    const token = req.headers.authorization.split(" ")[1];
-   
-    req.user = user;
-    jwt.verify(token, process.JWT_SECRET);
-    next();
-};
