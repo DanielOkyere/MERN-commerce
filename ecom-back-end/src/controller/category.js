@@ -24,6 +24,10 @@ function createCategories(categories, parentId = null) {
 }
 
 exports.addCategory = (req, res) => {
+   
+    if (req.file) {
+       categoryObj.categoryImage = process.env.API + '/public/' + req.file.filename;
+    }
     const categoryObj = {
         name: req.body.name,
         slug: slugify(req.body.name)
