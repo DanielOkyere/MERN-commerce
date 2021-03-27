@@ -62,6 +62,12 @@ exports.signin = (req, res) => {
             }
     })
     // return res.status(200).json({ message: "Something went wrong"})
-
+    
 }
 
+exports.signout = (req, res) => {
+  res.clearCookie("token");
+  res.status(200).json({
+    message: "Signout Successful....!",
+  });
+};
